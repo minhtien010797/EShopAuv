@@ -11,7 +11,7 @@ namespace Catalog.API.Products.GetProductById
     {
         public async Task<GetProductByIdResult> Handle(GetProductByIdQuery query, CancellationToken cancellationToken)
         {
-            logger.LogInformation("Handling GetProductByIdQuery: {@Command}", query);
+            logger.LogInformation("Handling GetProductByIdQuery: {@Query}", query);
             // Create entity
             var product = await session.LoadAsync<Product>(query.Id, cancellationToken);
 
