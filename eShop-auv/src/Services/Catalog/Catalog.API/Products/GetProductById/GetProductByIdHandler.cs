@@ -14,7 +14,6 @@ namespace Catalog.API.Products.GetProductById
             logger.LogInformation("Handling GetProductByIdQuery: {@Query}", query);
             // Create entity
             var product = await session.LoadAsync<Product>(query.Id, cancellationToken);
-
             if (product == null)
             { 
                 throw new ProductNotFoundException(query.Id);
